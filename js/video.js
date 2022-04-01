@@ -43,7 +43,6 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("The value of mute is " + video.muted)
-	video.muted = true
 	// if I am currently muted (muted == True)
 	// set muted to false and update the text in the button
 	// else
@@ -62,7 +61,16 @@ document.querySelector("#slider").addEventListener("click", function() {
 	console.log(volumeSlider.value)
 	// Use this.value to update the video volume AND
 	// update the volume element below	
+	document.querySelector("#volume").innerHTML = volumeSlider.value /100+"%"
 });
 
-video.classList.add("oldSchool")
-video.classList.remove("oldSchool")
+document.querySelector("#vintage").addEventListener("click", function() {
+	video.classList.add("oldSchool")
+});
+
+document.querySelector("#orig").addEventListener("click", function() {
+	video.classList.remove("oldSchool")
+});
+
+
+

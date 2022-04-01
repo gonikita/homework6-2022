@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play()
-	console.log("The current volume is" + video.volume)
+	console.log("The current volume is " + video.volume)
 	document.querySelector("#volume").innerHTML = video.volume *100+"%"
 });
 
@@ -58,10 +58,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 document.querySelector("#slider").addEventListener("click", function() {
-	console.log(volumeSlider.value)
+	console.log(slider.value)
+	video.volume = slide.value
 	// Use this.value to update the video volume AND
 	// update the volume element below	
-	document.querySelector("#volume").innerHTML = volumeSlider.value /100+"%"
+	document.querySelector("#volume").innerHTML = video.volume *1 +"%"
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {

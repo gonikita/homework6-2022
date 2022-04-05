@@ -1,17 +1,18 @@
-var video = document.querySelector("#player1")
+var video = document.querySelector("#player1");
+var slider = document.querySelector("#slider");
 
 window.addEventListener("load", function() {
-	console.log("Good job opening the window")
-	video.autoplay = false
-	video.loop = false
+	console.log("Good job opening the window");
+	video.autoplay = false;
+	video.loop = false;
 	
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
-	video.play()
-	console.log("The current volume is " + video.volume)
-	document.querySelector("#volume").innerHTML = video.volume *100+"%"
+	video.play();
+	console.log("The current volume is " + video.volume);
+	document.querySelector("#volume").innerHTML = video.volume *100+"%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -50,19 +51,22 @@ document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted) {
 		video.muted = false;
 		console.log("Unmuted")
+		document.querySelector("#mute").innerHTML = "Unmuted";
 	}
 	else {
 		video.muted = true
 		console.log("Muted")
+		document.querySelector("#mute").innerHTML = "Muted";
 	}
+	
 });
 
 document.querySelector("#slider").addEventListener("click", function() {
 	console.log(slider.value)
-	video.volume = slide.value
+	video.volume = slider.value/100
 	// Use this.value to update the video volume AND
 	// update the volume element below	
-	document.querySelector("#volume").innerHTML = video.volume *1 +"%"
+	document.querySelector("#volume").innerHTML = video.volume *100 +"%"
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {

@@ -34,7 +34,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	video.currentTime = video.currentTime + 15
-	if (video.ended) {
+	if (video.currentTime >= video.duration) {
 		video.load();
 		video.play();
 		playbackRate = 1
@@ -51,12 +51,12 @@ document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted) {
 		video.muted = false;
 		console.log("Unmuted")
-		document.querySelector("#mute").innerHTML = "Unmuted";
+		document.querySelector("#mute").innerHTML = "Mute";
 	}
 	else {
 		video.muted = true
 		console.log("Muted")
-		document.querySelector("#mute").innerHTML = "Muted";
+		document.querySelector("#mute").innerHTML = "Unmute";
 	}
 	
 });
